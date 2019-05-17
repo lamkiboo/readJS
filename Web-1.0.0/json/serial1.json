@@ -1,0 +1,1 @@
+{"proto":"Modbus-RTU","baudRate":"19200","dataBit":"6","stopBit":"2","checkBit":"1","filterMethod":"1","collectDuration":"1111","waitDuration":"111","serialName":"COM4"}

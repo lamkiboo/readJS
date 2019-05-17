@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Justified Nav Template for Bootstrap</title>
+        
+        <link rel="icon" href="../../favicon.ico">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/custem.css" rel="stylesheet">
+    </head>
+    <body onload="page.init()">
+        <div class="container">
+            <div class="masthead">
+                <h3 class="text-muted"></h3>
+                <nav>
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="#">设备配置</a></li>
+                        <li><a href="#">待定</a></li>
+                        <li><a href="#">待定</a></li>
+                        <li><a href="#">待定</a></li>
+                        <li><a href="#">待定</a></li>
+                        <li><a href="#">待定</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="panel panel-default" style="margin-top: 20px">
+                <div class="panel-heading">
+                    <h3 class="panel-title">嵌入式设备端口参数配置</h3>
+                </div>
+                <div class="panel-body" style="padding: 10px;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">串口1参数设置</h3>
+                                </div>
+                                <div class="panel-body" style="display: none">
+                                </div>
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                            <td>协议格式</td>
+                                            <td>
+                                                <select id="selProto1" class="form-control">
+                                                    <option value="Modbus-RTU">Modbus-RTU</option>
+                                                    <option value="TBD">待扩展</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>波特率</td>
+                                            <td>
+                                                <select id="selBaudRate1" class="form-control">
+                                                    <option value="300">300</option>
+                                                    <option value="600">600</option>
+                                                    <option value="1200">1200</option>
+                                                    <option value="2400">2400</option>
+                                                    <option value="4800">4800</option>
+                                                    <option value="9600">9600</option>
+                                                    <option value="19200">19200</option>
+                                                    <option value="38400">38400</option>
+                                                    <option value="43000">43000</option>
+                                                    <option value="56000">56000</option>
+                                                    <option value="57600">57600</option>
+                                                    <option value="115200">115200</option>
+                                                    <option value="128000">128000</option>
+                                                    <option value="256000">256000</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>数据位</td>
+                                            <td>
+                                                <select id="selDataBit1" class="form-control">
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>停止位</td>
+                                            <td>
+                                                <select id="selStopBit1" class="form-control">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>校验位</td>
+                                            <td>
+                                                <select id="selCheckBit1" class="form-control">
+                                                    <option value="0">无</option>
+                                                    <option value="1">奇校验</option>
+                                                    <option value="2">偶校验</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>数据滤波方式</td>
+                                            <td>
+                                                <select id="selFilterMethod1" class="form-control">
+                                                    <option value="0">中位值滤波</option>
+                                                    <option value="1">平均值滤波</option>
+                                                    <option value="2">加权滤波</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>采集时长</td>
+                                            <td>
+                                                <input id="txtCollectDuration1" class="form-control" placeholder="单位：毫秒"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>等待时长</td>
+                                            <td>
+                                                <input id="txtWaitDuration1" class="form-control" placeholder="单位：毫秒"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>串口选择</td>
+                                            <td>
+                                                <select id="selSerialName1" class="form-control">
+                                                    <option value="COM1">COM1</option>
+                                                    <option value="COM2">COM2</option>
+                                                    <option value="COM3">COM3</option>
+                                                    <option value="COM4">COM4</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td style="text-align: right">
+                                                <button class="btn btn-danger" onclick="page.save('serial1')">保存</button>
+                                                <button class="btn btn-default" onclick="page.cancel('serial1')">取消</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">串口1参数设置</h3>
+                                </div>
+                                <div class="panel-body" style="display: none">
+                                </div>
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                            <td>协议格式</td>
+                                            <td>
+                                                <select id="selProto2" class="form-control">
+                                                    <option value="Modbus-RTU">Modbus-RTU</option>
+                                                    <option value="TBD">待扩展</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>波特率</td>
+                                            <td>
+                                                <select id="selBaudRate2" class="form-control">
+                                                    <option value="300">300</option>
+                                                    <option value="600">600</option>
+                                                    <option value="1200">1200</option>
+                                                    <option value="2400">2400</option>
+                                                    <option value="4800">4800</option>
+                                                    <option value="9600">9600</option>
+                                                    <option value="19200">19200</option>
+                                                    <option value="38400">38400</option>
+                                                    <option value="43000">43000</option>
+                                                    <option value="56000">56000</option>
+                                                    <option value="57600">57600</option>
+                                                    <option value="115200">115200</option>
+                                                    <option value="128000">128000</option>
+                                                    <option value="256000">256000</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>数据位</td>
+                                            <td>
+                                                <select id="selDataBit2" class="form-control">
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>停止位</td>
+                                            <td>
+                                                <select id="selStopBit2" class="form-control">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>校验位</td>
+                                            <td>
+                                                <select id="selCheckBit2" class="form-control">
+                                                    <option value="0">无</option>
+                                                    <option value="1">奇校验</option>
+                                                    <option value="2">偶校验</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>数据滤波方式</td>
+                                            <td>
+                                                <select id="selFilterMethod2" class="form-control">
+                                                    <option value="0">中位值滤波</option>
+                                                    <option value="1">平均值滤波</option>
+                                                    <option value="2">加权滤波</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>采集时长</td>
+                                            <td>
+                                                <input id="txtCollectDuration2" class="form-control" placeholder="单位：毫秒"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>等待时长</td>
+                                            <td>
+                                                <input id="txtWaitDuration2" class="form-control" placeholder="单位：毫秒"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>串口选择</td>
+                                            <td>
+                                                <select id="selSerialName2" class="form-control">
+                                                    <option value="COM1">COM1</option>
+                                                    <option value="COM2">COM2</option>
+                                                    <option value="COM3">COM3</option>
+                                                    <option value="COM4">COM4</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td style="text-align: right">
+                                                <button class="btn btn-danger" onclick="page.save('serial2')">保存</button>
+                                                <button class="btn btn-default" onclick="page.cancel('serial2')">取消</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">网口参数设置</h3>
+                                </div>
+                                <div class="panel-body" style="display: none">
+                                </div>
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                            <td>ETH0 IP</td>
+                                            <td>
+                                                <input id="txtEth0IP" class="form-control" placeholder=""/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>ETH1 IP</td>
+                                            <td>
+                                                <input id="txtEth1IP" class="form-control" placeholder=""/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td style="text-align: right">
+                                                <button class="btn btn-danger" onclick="page.save('network')">保存</button>
+                                                <button class="btn btn-default" onclick="page.cancel('network')">取消</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">CAN1设置</h3>
+                                </div>
+                                <div class="panel-body" style="display: none">
+                                </div>
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                            <td>端口号</td>
+                                            <td>
+                                                <select id="selCan1Port" class="form-control">
+                                                    <option>CAN0</option>
+                                                    <option>CAN1</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>波特率</td>
+                                            <td>
+                                                <input id="txtCan1Baud" class="form-control" placeholder=""/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td style="text-align: right">
+                                                <button class="btn btn-danger" onclick="page.save('can1')">保存</button>
+                                                <button class="btn btn-default" onclick="page.cancel('can1')">取消</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">CAN2设置</h3>
+                                </div>
+                                <div class="panel-body" style="display: none">
+                                </div>
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                            <td>端口号</td>
+                                            <td>
+                                                <select id="selCan2Port" class="form-control">
+                                                    <option>CAN0</option>
+                                                    <option>CAN1</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>波特率</td>
+                                            <td>
+                                                <input id="txtCan2Baud" class="form-control" placeholder=""/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td style="text-align: right">
+                                                <button class="btn btn-danger" onclick="page.save('can2')">保存</button>
+                                                <button class="btn btn-default" onclick="page.cancel('can2')">取消</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" style="margin-top: 20px">
+                <div class="panel-heading">
+                    <h3 class="panel-title">嵌入式云端配置</h3>
+                </div>
+                <div class="panel-body" style="padding: 10px;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <button style="background:#f5f5f5;color:#286090;font-size: 19px;margin-top:-5px;border:0;font-weight:bold;float: right" onclick="page.addType()">+</button>
+                            <h3 class="panel-title">配置文件</h3>
+                        </div>
+                        <table class="table table-hover">
+                            <tbody id="tbodyFileList">
+                                <tr><td>无</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding: 10px;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">接口配置</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-3">数据传输方式</div>
+                                <div class="col-sm-3">
+                                    <select id="selCloudProto" class="form-control">
+                                        <option value="aliMQTT">阿里云(MQTT)</option>
+                                        <option value="oneNetMQTT">OneNET(MQTT)</option>
+                                        <option value="privateMQTT">私有云(私有协议)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary" onclick="page.save('cloud')">保存</button>
+                                </div>
+                            </div>
+                            <!--<div class="row" style="margin-top: 10px">
+                                <form id="configFileForm" action="cgi-bin/config.cgi" method="post" enctype="multipart/form-data">
+                                    <div class="col-sm-3">上传配置文件</div>
+                                    <div class="col-sm-3" >
+                                        <input id="configFile" name="configFile" type="file" />
+                                        <input id="action" name="action" style="display: none" value="upload"/>
+                                    </div>
+                                </form>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <p>&copy; 2019 JiangNan University.</p>
+            </footer>
+        </div>
+        <div class="modal fade" id="fileModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">上传文件</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="fileProtoField" class="row" style="padding: 10px">
+                            <label class="col-sm-3">协议类型</label>
+                            <div class="col-sm-6">
+                                <input id="protoType" class="form-control"  onkeyup="page.updateFileName(this.value)"/>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px">
+                            <label class="col-sm-3">文件名称</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <span id="filePrefix" class="input-group-addon"></span>
+                                    <input id="fileName" class="form-control" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 10px">
+                            <form id="configFileForm" action="cgi-bin/config.cgi" method="post" enctype="multipart/form-data">
+                                <label class="col-sm-3">配置文件</label>
+                                <div class="col-sm-6" >
+                                    <input id="configFile" name="configFile" type="file" />
+                                    <input id="configName" name="configName" style="display: none" />
+                                    <input id="action" name="action" style="display: none" value="upload"/>
+                                    <input id="cloudConfig" name="cloudConfig" style="display: none"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var page = {
+                uploading: false,
+                init: function() {
+                    $("#configFile").on("change", function(){
+                        var fileName = $("#fileName").val();
+                        var protoType = $("#protoType").val();
+                        if(page.uploading){
+                            alert("文件正在上传中，请稍候");
+                            return false;
+                        }
+                        if(protoType == "") {
+                            alert("协议类型不能为空");
+                            return false;
+                        }
+                        if(fileName == "") {
+                            alert("文件名不能为空");
+                            return false;
+                        }
+                        $("#configName").val(protoType+fileName);
+                        var hasAdd = false;
+                        if(page.objCloud.configList) {
+                            for(var i = 0; i < page.objCloud.configList.length; i++) {
+                                var configItem = page.objCloud.configList[i];
+                                if(configItem.proto == protoType) {
+                                    configItem.list.push({"name": protoType+fileName, "used": 0});
+                                    hasAdd = true;
+                                    break;
+                                }
+                            }
+                        }
+                        else {
+                            page.objCloud.configList = [];
+                        }
+                        if(!hasAdd) {
+                            page.objCloud.configList.push({"proto":protoType,"list":[{"name": protoType+fileName, "used": 0}]});
+                        }
+                        $("#fileModal").modal("hide");
+                        $("#cloudConfig").val(JSON.stringify(page.objCloud));
+                        $.ajax({
+                            url: "cgi-bin/config.cgi",
+                            type: 'POST',
+                            data: new FormData($('#configFileForm')[0]),
+                            processData: false,
+                            contentType: false,
+                            dataType:"json",
+                            beforeSend: function(){
+                                page.uploading = true;
+                                alert("上传成功");
+                                window.location.reload();
+                            },
+                            success : function(data) {
+                                page.uploading = false;
+                            }
+                        });
+                    });
+//                    var obj = [
+//                        {
+//                            "proto":"modebus",
+//                            "list": [{
+//                                "name": "modbus1",
+//                                "used": 1
+//                            },{
+//                                "name": "modbus2",
+//                                "used": 0
+//                            }]
+//                        },
+//                        {
+//                            "proto":"others",
+//                            "list": [{
+//                                "name": "others1",
+//                                "used": 1
+//                            },{
+//                                "name": "others2",
+//                                "used": 0
+//                            }]
+//                        },
+//                    ];
+//                    $("#tbodyFileList").empty();
+//                    obj.forEach(function(item){
+//                        var parent = "<tr style=\"background:lightblue;\"> \
+//                                        <td>" + item.proto +"<button style=\"background:lightblue;color:#286090;;border:0;font-weight:bold\" onclick=\"page.addFileByType('" + item.proto + "')\">+</button></td> \
+//                                        <td></td> \
+//                                    </tr>";
+//                        $("#tbodyFileList").append(parent);
+//                        item.list.forEach(function(file){
+//                            var child = "<tr> \
+//                                        <td>" + file.name +"</td> \
+//                                        <td>\
+//                                            <button class=\"btn btn-primary\" style=\"font-size:12px;line-height:0.8;display:"+ (file.used==1?"none":"") +"\" onclick=\"page.startUse('" + file.name + "')\">启用</button>\
+//                                            <button class=\"btn btn-danger\" style=\"font-size:12px;line-height:0.8;\" onclick=\"page.deleteFileByName('" + file.name + "')\">删除</button>\
+//                                        </td> \
+//                                    </tr>";
+//                            $("#tbodyFileList").append(child);
+//                        });
+//                    });
+                    
+                    $.ajax({
+                        url: "cgi-bin/config.cgi",
+                        type:"POST",
+                        data: {
+                            action: "get"
+                        },
+                        success: function(res) {
+                            console.log(res);
+                            page.objSerial1 = res.serial1;
+                            page.objSerial2 = res.serial2;
+                            page.objNetwork = res.network;
+                            page.objCan1 = res.can1;
+                            page.objCan2 = res.can2;
+                            page.objCloud = res.cloud;
+                            if(Object.keys(page.objSerial1).length > 0) {
+                                $("#selProto1").val(page.objSerial1.proto);
+                                $("#selBaudRate1").val(page.objSerial1.baudRate);
+                                $("#selDataBit1").val(page.objSerial1.dataBit);
+                                $("#selStopBit1").val(page.objSerial1.stopBit);
+                                $("#selCheckBit1").val(page.objSerial1.checkBit);
+                                $("#selFilterMethod1").val(page.objSerial1.filterMethod);
+                                $("#txtCollectDuration1").val(page.objSerial1.collectDuration);
+                                $("#txtWaitDuration1").val(page.objSerial1.waitDuration);
+                                $("#selSerialName1").val(page.objSerial1.serialName);
+                            }
+                            if(Object.keys(page.objSerial2).length > 0) {
+                                $("#selProto2").val(page.objSerial2.proto);
+                                $("#selBaudRate2").val(page.objSerial2.baudRate);
+                                $("#selDataBit2").val(page.objSerial2.dataBit);
+                                $("#selStopBit2").val(page.objSerial2.stopBit);
+                                $("#selCheckBit2").val(page.objSerial2.checkBit);
+                                $("#selFilterMethod2").val(page.objSerial2.filterMethod);
+                                $("#txtCollectDuration2").val(page.objSerial2.collectDuration);
+                                $("#txtWaitDuration2").val(page.objSerial2.waitDuration);
+                                $("#selSerialName2").val(page.objSerial2.serialName);
+                            }
+                            if(Object.keys(page.objNetwork).length > 0) {
+                                eth0: $("#txtEth0IP").val(page.objNetwork.eth0);
+                                eth1: $("#txtEth1IP").val(page.objNetwork.eth1);
+                            }
+                            if(Object.keys(page.objCan1).length > 0) {
+                                port: $("#selCan1Port").val(page.objCan1.port);
+                                baud: $("#txtCan1Baud").val(page.objCan1.baud);
+                            }
+                            if(Object.keys(page.objCan2).length > 0) {
+                                port: $("#selCan2Port").val(page.objCan2.port);
+                                baud: $("#txtCan2Baud").val(page.objCan2.baud);
+                            }
+                            if(Object.keys(page.objCloud).length > 0) {
+                                $("#tbodyFileList").empty();
+                                page.objCloud.configList.forEach(function(item){
+                                    var parent = "<tr style=\"background:lightblue;\"> \
+                                                    <td>" + item.proto +"<button style=\"background:lightblue;color:#286090;;border:0;font-weight:bold\" onclick=\"page.addFileByType('" + item.proto + "')\">+</button></td> \
+                                                    <td></td> \
+                                                </tr>";
+                                    $("#tbodyFileList").append(parent);
+                                    item.list.forEach(function(file){
+                                        var child = "<tr> \
+                                                    <td>" + file.name +"</td> \
+                                                    <td>\
+                                                        <button class=\"btn btn-primary\" style=\"font-size:12px;line-height:0.8;display:"+ (file.used==1?"none":"") +"\" onclick=\"page.startUse('" + file.name + "')\">启用</button>\
+                                                        <button class=\"btn btn-danger\" style=\"font-size:12px;line-height:0.8;\" onclick=\"page.deleteFileByName('" + file.name + "')\">删除</button>\
+                                                    </td> \
+                                                </tr>";
+                                        $("#tbodyFileList").append(child);
+                                    });
+                                });
+                                if(page.objCloud.proto) {
+                                    $("#selCloudProto").val(page.objCloud.proto);
+                                }
+                            }
+                        },
+                        fail: function(err) {
+                            console.log(err);
+                        }
+                    });
+                },
+                save: function(configType) {
+                    switch(configType)
+                    {
+                        case 'serial1':
+                            var collectDuration = $("#txtCollectDuration1").val();
+                            var waitDuration = $("#txtWaitDuration1").val();
+                            if(!page.isNum(collectDuration)) {
+                                alert("采集时长必须为数字");
+                                return false;
+                            }
+                            if(!page.isNum(waitDuration)) {
+                                alert("等待时长必须为数字");
+                                return false;
+                            }
+                            var config = {
+                                type: configType,
+                                action: "set",
+                                proto: $("#selProto1").val(),
+                                baudRate: $("#selBaudRate1") .val(),
+                                dataBit: $("#selDataBit1") .val(),
+                                stopBit: $("#selStopBit1") .val(),
+                                checkBit: $("#selCheckBit1") .val(),
+                                filterMethod: $("#selFilterMethod1") .val(),
+                                collectDuration: collectDuration,
+                                waitDuration: waitDuration,
+                                serialName: $("#selSerialName1") .val(),
+                            }
+                            $.ajax({
+                                url: "cgi-bin/config.cgi",
+                                type:"POST",
+                                data: config,
+                                success: function(res) {
+                                    console.log(res);
+                                    if(res.result == "success") {
+                                        alert("保存成功");
+                                    }
+                                    else {
+                                        alert("保存失败");
+                                    }
+                                },
+                                fail: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                            break;
+                        case 'serial2':
+                            var collectDuration = $("#txtCollectDuration2").val();
+                            var waitDuration = $("#txtWaitDuration2").val();
+                            if(!page.isNum(collectDuration)) {
+                                alert("采集时长必须为数字");
+                                return false;
+                            }
+                            if(!page.isNum(waitDuration)) {
+                                alert("等待时长必须为数字");
+                                return false;
+                            }
+                            var config = {
+                                type: configType,
+                                action: "set",
+                                proto: $("#selProto2").val(),
+                                baudRate: $("#selBaudRate2") .val(),
+                                dataBit: $("#selDataBit2") .val(),
+                                stopBit: $("#selStopBit2") .val(),
+                                checkBit: $("#selCheckBit2") .val(),
+                                filterMethod: $("#selFilterMethod2") .val(),
+                                collectDuration: collectDuration,
+                                waitDuration: waitDuration,
+                                serialName: $("#selSerialName2") .val(),
+                            }
+                            $.ajax({
+                                url: "cgi-bin/config.cgi",
+                                type:"POST",
+                                data: config,
+                                success: function(res) {
+                                    console.log(res);
+                                    if(res.result == "success") {
+                                        alert("保存成功");
+                                    }
+                                    else {
+                                        alert("保存失败");
+                                    }
+                                },
+                                fail: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                            break;
+                        case 'network':
+                            var eth0Ip = $("#txtEth0IP").val();
+                            var eth1Ip = $("#txtEth1IP").val();
+                            if(!page.isValidIP(eth0Ip)) {
+                                alert("ETH0 IP地址格式不正确");
+                                return false;
+                            }
+                            if(!page.isValidIP(eth1Ip)) {
+                                alert("ETH1 IP地址格式不正确");
+                                return false;
+                            }
+                            var config = {
+                                type: configType,
+                                action: "set",
+                                eth0: eth0Ip,
+                                eth1: eth1Ip,
+                            }
+                            $.ajax({
+                                url: "cgi-bin/config.cgi",
+                                type:"POST",
+                                data: config,
+                                success: function(res) {
+                                    console.log(res);
+                                    if(res.result == "success") {
+                                        alert("保存成功");
+                                    }
+                                    else {
+                                        alert("保存失败");
+                                    }
+                                },
+                                fail: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                            break;
+                        case 'can1':
+                            var baud = $("#txtCan1Baud").val();
+                            if(!page.isNum(baud)) {
+                                alert("波特率必须为数字");
+                                return false;
+                            }
+                            var config = {
+                                type: configType,
+                                action: "set",
+                                port: $("#selCan1Port").val(),
+                                baud: baud,
+                            }
+                            $.ajax({
+                                url: "cgi-bin/config.cgi",
+                                type:"POST",
+                                data: config,
+                                success: function(res) {
+                                    console.log(res);
+                                    if(res.result == "success") {
+                                        alert("保存成功");
+                                    }
+                                    else {
+                                        alert("保存失败");
+                                    }
+                                },
+                                fail: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                            break;
+                        case 'can2':
+                            var baud = $("#txtCan2Baud").val();
+                            if(!page.isNum(baud)) {
+                                alert("波特率必须为数字");
+                                return false;
+                            }
+                            var config = {
+                                type: configType,
+                                action: "set",
+                                port: $("#selCan2Port").val(),
+                                baud: baud,
+                            }
+                            $.ajax({
+                                url: "cgi-bin/config.cgi",
+                                type:"POST",
+                                data: config,
+                                success: function(res) {
+                                    console.log(res);
+                                    if(res.result == "success") {
+                                        alert("保存成功");
+                                    }
+                                    else {
+                                        alert("保存失败");
+                                    }
+                                },
+                                fail: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                            break;
+                        case 'cloud':
+                            page.objCloud.proto = $("#selCloudProto").val();
+                            var config = {
+                                action: "enable",
+                                cloudConfig: JSON.stringify(page.objCloud)
+                            }
+                            $.ajax({
+                                url: "cgi-bin/config.cgi",
+                                type:"POST",
+                                data: config,
+                                success: function(res) {
+                                    console.log(res);
+                                    if(res.result == "success") {
+                                        alert("保存成功");
+                                    }
+                                    else {
+                                        alert("保存失败");
+                                    }
+                                },
+                                fail: function(err) {
+                                    console.log(err);
+                                }
+                            });
+                            break;
+                        default:
+                            console.log('None');
+                    }
+                },
+                addFileByType: function(type) {
+                    $("#protoType").val(type);
+                    $("#filePrefix").html(type);
+                    $("#fileProtoField").hide();
+                    $("#fileModal").modal("show");
+                },
+                addType: function() {
+                    $("#protoType").val("");
+                    $("#filePrefix").html("");
+                    $("#fileProtoField").show();
+                    $("#fileModal").modal("show");
+                },
+                deleteFileByName: function(filename) {
+                    var protoIndex = -1;
+                    var fileIndex = -1;
+                    for(var i = 0; i < page.objCloud.configList.length; i++) {
+                        var configItem = page.objCloud.configList[i];
+                        for(var j = 0; j < configItem.list.length; j++) {
+                            var currFilename = configItem.list[j].name;
+                            if(filename == currFilename) {
+                                protoIndex = i;
+                                fileIndex = j;
+                                break;
+                            }
+                        }
+                        if(protoIndex != -1 && fileIndex != -1) {
+                            break;
+                        }
+                    }
+                    if(protoIndex != -1 && fileIndex != -1) {
+                        page.objCloud.configList[protoIndex].list.splice(fileIndex, 1);
+                    }
+                    else {
+                        alert("未发现文件");
+                        return false;
+                    }
+                    var cloudConfig = JSON.stringify(page.objCloud);
+                    $.ajax({
+                        url: "cgi-bin/config.cgi",
+                        type:"POST",
+                        data: {
+                            action: "delete",
+                            configName: filename,
+                            cloudConfig: cloudConfig
+                        },
+                        success: function(res) {
+                            if(res.result == "success") {
+                                alert("删除成功");
+                            }
+                            else {
+                                alert("删除失败");
+                            }
+                            window.location.reload();
+                        },
+                        fail: function(err) {
+                            console.log(err);
+                        }
+                    });
+                },
+                startUse: function(filename) {
+                    var protoIndex = -1;
+                    var fileIndex = -1;
+                    for(var i = 0; i < page.objCloud.configList.length; i++) {
+                        var configItem = page.objCloud.configList[i];
+                        for(var j = 0; j < configItem.list.length; j++) {
+                            var currFilename = configItem.list[j].name;
+                            if(filename == currFilename) {
+                                protoIndex = i;
+                                fileIndex = j;
+                                break;
+                            }
+                        }
+                        if(protoIndex != -1 && fileIndex != -1) {
+                            break;
+                        }
+                    }
+                    if(protoIndex != -1 && fileIndex != -1) {
+                        page.objCloud.configList[protoIndex].list.forEach(function(item){
+                            item.used = 0;
+                        });
+                        page.objCloud.configList[protoIndex].list[fileIndex].used = 1;
+                    }
+                    else {
+                        alert("未发现文件");
+                        return false;
+                    }
+                    var cloudConfig = JSON.stringify(page.objCloud);
+                    $.ajax({
+                        url: "cgi-bin/config.cgi",
+                        type:"POST",
+                        data: {
+                            action: "enable",
+                            cloudConfig: cloudConfig
+                        },
+                        success: function(res) {
+                            if(res.result == "success") {
+                                alert("启用成功");
+                            }
+                            else {
+                                alert("启用失败");
+                            }
+                            window.location.reload();
+                        },
+                        fail: function(err) {
+                            console.log(err);
+                        }
+                    });
+                },
+                updateFileName: function() {
+                    var protoType = $("#protoType").val();
+                    console.log(protoType);
+                    $("#filePrefix").html(protoType);
+                },
+                isValidIP: function (ip) {
+                    var reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
+                    return reg.test(ip);
+                },
+                isNum: function (str) {
+                    var reg = /[0-9]+/
+                    return reg.test(str);
+                },
+            };
+        </script>
+    </body>
+</html>
